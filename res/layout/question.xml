@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:text="@string/answer_question"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:text="Very difficult question" android:layout_centerVertical="true" android:layout_height="wrap_content" android:textSize="20pt"/>
+
+    <Button android:layout_width="wrap_content"
+        android:width="100px" android:layout_height="wrap_content" android:text="@string/next" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:id="@+id/nextButton"></Button>
+</RelativeLayout>

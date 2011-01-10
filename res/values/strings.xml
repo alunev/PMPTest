@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActiviy!</string>
+    <string name="app_name">PMPTest</string>
+    <string name="start_test">Start random test</string>
+    <string name="answer_question">Please answer the question:</string>
+    <string name="next">Next</string>
+</resources>

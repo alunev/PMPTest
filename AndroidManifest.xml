@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="ru.alunev.android.pmptest"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".activity.MainActiviy"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.StartTestActivity">
+            <intent-filter>
+                <action android:name="com.alunev.android.pmptest.intent.action.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.QuestionActivity">
+            <intent-filter>
+                <action android:name="com.alunev.android.pmptest.intent.action.QUESTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+
+</manifest>
