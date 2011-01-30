@@ -1,6 +1,8 @@
 package ru.alunev.android.pmptest.activity;
 
 import ru.alunev.android.pmptest.R;
+import ru.alunev.android.pmptest.ds.QuestionsDAO;
+import ru.alunev.android.pmptest.ds.QuestionsOpenHelper;
 import ru.alunev.android.pmptest.info.AtivityIntents;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +17,11 @@ public class MainActiviy extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        // init DB
+        QuestionsOpenHelper oh = new QuestionsOpenHelper(this);
+        oh.createDatabase();
+        QuestionsDAO.init(getApplicationContext());
 
         final Button startButton = (Button) findViewById(R.id.startButton);
 

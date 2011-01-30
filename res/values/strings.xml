@@ -5,4 +5,8 @@
     <string name="start_test">Start random test</string>
     <string name="answer_question">Please answer the question:</string>
     <string name="next">Next</string>
+    <string name="back_to_home">Home</string>
+    <string name="results_title">Results of your test</string>
+    <string name="results_score_title">correct / total:</string>
+    <string name="results_table_header">Question    Your answer    Correct</string>
 </resources>

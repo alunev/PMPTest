@@ -6,11 +6,15 @@
     >
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:text="@string/answer_question"/>
+        android:layout_height="wrap_content" android:text="@string/answer_question" android:id="@+id/question_screen_title"/>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:text="Very difficult question" android:layout_centerVertical="true" android:layout_height="wrap_content" android:textSize="20pt"/>
+    <TextView android:layout_marginTop="30dp" android:layout_height="100dp" android:layout_width="fill_parent" android:id="@+id/question_content" android:text="qq" android:textSize="18sp"/>
+    <RadioGroup android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/answer_variants" android:layout_below="@+id/question_content">
+        <RadioButton android:layout_width="wrap_content" android:text="RadioButton" android:layout_height="wrap_content" android:id="@+id/answer1" android:checked="true"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:text="RadioButton" android:layout_height="wrap_content" android:id="@+id/answer2"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:text="RadioButton" android:layout_height="wrap_content" android:id="@+id/answer3"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:text="RadioButton" android:layout_height="wrap_content" android:id="@+id/answer4"></RadioButton>
+    </RadioGroup>
 
     <Button android:layout_width="wrap_content"
         android:width="100px" android:layout_height="wrap_content" android:text="@string/next" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:id="@+id/nextButton"></Button>
