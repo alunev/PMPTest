@@ -9,4 +9,6 @@
     <string name="results_title">Results of your test</string>
     <string name="results_score_title">correct / total:</string>
     <string name="results_table_header">Question    Your answer    Correct</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
 </resources>

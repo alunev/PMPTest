@@ -12,8 +12,7 @@ public class StartTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start);
 
-        // show first question
-        Intent startQuestion = new Intent(AtivityIntents.questionIntent);
-        startActivity(startQuestion);
+        Intent start = new Intent(AtivityIntents.startIntent);
+        startActivity(start);
     }
 }

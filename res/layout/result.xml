@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:text="@string/results_title" android:textSize="20sp" android:id="@+id/results_screen_title"/>
@@ -15,11 +14,12 @@
         android:layout_height="wrap_content"
         android:text="@string/back_to_home"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/nextButton"></Button>
+        android:layout_alignParentRight="true" android:id="@+id/homeButton"></Button>
     <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:textSize="20sp" android:layout_alignBottom="@+id/result_score" android:text="@string/results_score_title" android:id="@+id/results_score_title"></TextView>
     <TextView android:layout_below="@+id/results_score_title" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignLeft="@+id/results_score_title" android:id="@+id/result_table_header" android:text="@string/results_table_header" android:layout_marginTop="20dp"></TextView>
     <ScrollView android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:id="@+id/results_table" android:layout_width="fill_parent" android:layout_below="@+id/result_table_header">
-        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent"></LinearLayout>
+        <LinearLayout android:id="@+id/results_content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

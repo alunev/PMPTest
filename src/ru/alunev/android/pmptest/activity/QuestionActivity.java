@@ -2,8 +2,10 @@ package ru.alunev.android.pmptest.activity;
 
 import ru.alunev.android.pmptest.R;
 import ru.alunev.android.pmptest.controller.QuizController;
+import ru.alunev.android.pmptest.info.AtivityIntents;
 import ru.alunev.android.pmptest.info.Question;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,13 +27,14 @@ public class QuestionActivity extends Activity {
         nextButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                captureAnswer();
                 if (QuizController.getInstance().askMoreQuestions()) {
                     // update view to show next question
-                    captureAnswer();
                     populateView();
                 } else {
                     // goto result screen
-
+                    Intent resStart = new Intent(AtivityIntents.resultsIntent);
+                    startActivity(resStart);
                 }
             }
         });
@@ -56,22 +59,30 @@ public class QuestionActivity extends Activity {
 
         answer = (RadioButton) answers.getChildAt(3);
         answer.setText(q.getAns4());
+
+        answers.clearCheck();
     }
 
     private void captureAnswer() {
         QuizController qc = QuizController.getInstance();
         RadioGroup answers = (RadioGroup) findViewById(R.id.answer_variants);
 
-        if (R.id.answer1 == answers.getCheckedRadioButtonId()) {
-            qc.submitAnswer(1);
-        } else if (R.id.answer2 == answers.getCheckedRadioButtonId()) {
-            qc.submitAnswer(2);
-        } else if (R.id.answer3 == answers.getCheckedRadioButtonId()) {
-            qc.submitAnswer(3);
-        } else if (R.id.answer4 == answers.getCheckedRadioButtonId()) {
-            qc.submitAnswer(4);
+        switch (answers.getCheckedRadioButtonId()) {
+            case R.id.answer1:
+                qc.submitAnswer(1);
+                break;
+            case R.id.answer2:
+                qc.submitAnswer(2);
+                break;
+            case R.id.answer3:
+                qc.submitAnswer(3);
+                break;
+            case R.id.answer4:
+                qc.submitAnswer(4);
+                break;
+            default:
+                qc.submitAnswer(0);
+                break;
         }
-
-        answers.clearCheck();
     }
 }
