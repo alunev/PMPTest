@@ -20,7 +20,7 @@ public class QuestionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
 
-        QuizController.getInstance().startQuiz();
+        QuizController.getInstance().startQuiz(getBaseContext());
         populateView();
 
         final Button nextButton = (Button) findViewById(R.id.nextButton);

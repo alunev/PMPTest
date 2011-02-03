@@ -51,6 +51,8 @@ public class MainActiviy extends Activity {
         switch (item.getItemId()) {
         case R.id.settings:
             // show settings
+            Intent startActivity = new Intent(AtivityIntents.preferencesIntent);
+            startActivity(startActivity);
             return true;
         case R.id.about:
             //showAbout();

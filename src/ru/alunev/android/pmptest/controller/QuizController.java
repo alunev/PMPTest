@@ -7,8 +7,12 @@ import java.util.Random;
 import java.util.Set;
 
 import ru.alunev.android.pmptest.ds.QuestionsDAO;
+import ru.alunev.android.pmptest.info.Defaults;
 import ru.alunev.android.pmptest.info.Question;
 import ru.alunev.android.pmptest.info.Results;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class QuizController {
     private static QuizController instance;
@@ -17,7 +21,7 @@ public class QuizController {
     private List<Integer> answers = new ArrayList<Integer>();
     private Set<Integer> seenNumbers = new HashSet<Integer>();
 
-    private static int QUESTIONS_IN_QUIZ = 4;
+    private int questionsInQuiz = 4;
 
     private QuizController() {
         // TODO Auto-generated constructor stub
@@ -56,7 +60,10 @@ public class QuizController {
         return next;
     }
 
-    public void startQuiz() {
+    public void startQuiz(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        this.questionsInQuiz = Integer.parseInt(prefs.getString("questions_per_quiz", Defaults.QUESTIONS_PER_QUIZ));
+
         this.askedQuestions.clear();
         this.answers.clear();
         this.seenNumbers.clear();
@@ -90,6 +97,6 @@ public class QuizController {
     }
 
     public boolean askMoreQuestions() {
-        return answers.size() < QUESTIONS_IN_QUIZ;
+        return answers.size() < questionsInQuiz;
     }
 }
